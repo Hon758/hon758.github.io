@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hon758 - アプリ開発者</title>
+    <meta name="description" content="個人開発者Hon758が開発するアプリの公式サイト。Collepin、Moonlightなどのアプリ情報と法的文書を提供しています。">
+    <meta name="keywords" content="Hon758, アプリ開発, Collepin, Moonlight, プライバシーポリシー, 利用規約">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-weight: 300;
+        }
+        
+        .header .subtitle {
+            font-size: 1.5em;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+        
+        .header .description {
+            font-size: 1.2em;
+            opacity: 0.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .app-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .app-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+        
+        .app-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+        
+        .app-card h2 {
+            color: #2c3e50;
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .app-card .icon {
+            font-size: 1.8em;
+            margin-right: 15px;
+        }
+        
+        .app-card .tagline {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .app-card p {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+        
+        .app-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .app-features li {
+            color: #555;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .app-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .app-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .app-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: transform 0.2s ease;
+        }
+        
+        .app-link:hover {
+            transform: scale(1.05);
+        }
+        
+        .app-link.secondary {
+            background: #f8f9fa;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            opacity: 0.8;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .footer p {
+            margin-bottom: 10px;
+        }
+        
+        .developer-info {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            color: white;
+            text-align: center;
+        }
+        
+        .developer-info h3 {
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .developer-info p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+            
+            .header .subtitle {
+                font-size: 1.2em;
+            }
+            
+            .apps-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .app-card {
+                padding: 30px;
+            }
+            
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .app-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Hon758</h1>
+            <div class="subtitle">アプリ開発者</div>
+            <div class="description">
+                個人開発者として、ユーザーの生活を豊かにするアプリを開発しています。<br>
+                プライバシーを重視し、使いやすさを追求したアプリをお届けします。
+            </div>
+        </div>
+        
+        <div class="developer-info">
+            <h3>👨‍💻 開発者について</h3>
+            <p>個人開発者として、AI技術を活用した実用的なアプリケーションの開発に取り組んでいます。ユーザーのプライバシー保護と使いやすさを最優先に考えたアプリを提供しています。</p>
+        </div>
+        
+        <div class="apps-grid">
+            <div class="app-card">
+                <h2>
+                    <span class="icon">📌</span>
+                    Collepin
+                </h2>
+                <div class="tagline">気になる情報を、すぐにコレクション</div>
+                <p>
+                    AI搭載型情報収集アプリ。Webコンテンツを効率的に収集・整理・活用するための次世代情報管理ツールです。従来のブックマークアプリを超えた体験を提供します。
+                </p>
+                <ul class="app-features">
+                    <li>AI自動処理（要約・分類・キーポイント抽出）</li>
+                    <li>Safari/Chromeからワンタップクリップ</li>
+                    <li>柔軟な整理機能（フォルダ・カテゴリ・タグ）</li>
+                    <li>高度な検索・フィルタリング</li>
+                    <li>ソーシャル機能（フレンド・共有）</li>
+                    <li>マップ表示機能</li>
+                    <li>リアルタイム同期</li>
+                </ul>
+                <div class="app-links">
+                    <a href="collepin/" class="app-link">アプリ詳細</a>
+                    <a href="collepin/privacy-policy.html" class="app-link secondary">プライバシーポリシー</a>
+                    <a href="collepin/terms-of-service.html" class="app-link secondary">利用規約</a>
+                </div>
+            </div>
+            
+            <div class="app-card">
+                <h2>
+                    <span class="icon">🌙</span>
+                    Moonlight
+                </h2>
+                <div class="tagline">月の光と共に、安らかな眠りを</div>
+                <p>
+                    睡眠の質を向上させるためのアプリ。月の満ち欠けと睡眠パターンの関係を科学的に分析し、最適な睡眠環境を提案します。自然なリズムで健康的な生活をサポートします。
+                </p>
+                <ul class="app-features">
+                    <li>月の満ち欠けと睡眠パターン分析</li>
+                    <li>科学的根拠に基づく睡眠アドバイス</li>
+                    <li>睡眠記録とトラッキング</li>
+                    <li>自然音と瞑想ガイド</li>
+                    <li>睡眠統計とレポート</li>
+                    <li>カスタマイズ可能な通知</li>
+                    <li>プライバシー重視の設計</li>
+                </ul>
+                <div class="app-links">
+                    <a href="moonlight/" class="app-link">アプリ詳細</a>
+                    <a href="moonlight/privacy-policy.html" class="app-link secondary">プライバシーポリシー</a>
+                    <a href="moonlight/terms-of-service.html" class="app-link secondary">利用規約</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Hon758</strong> - 個人開発者</p>
+            <p>プライバシーを重視し、ユーザーファーストのアプリ開発</p>
+            <p>お問い合わせ: 各アプリ内のサポートページからご連絡ください</p>
+            <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.7;">
+                © 2025 Hon758. All rights reserved.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

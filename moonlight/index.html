@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moonlight - 睡眠の質を向上させるアプリ</title>
+    <meta name="description" content="Moonlightは、月の満ち欠けと睡眠パターンの関係を科学的に分析し、最適な睡眠環境を提案するアプリです。自然なリズムで健康的な生活をサポートします。">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header .subtitle {
+            font-size: 1.3em;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+        
+        .header .tagline {
+            font-size: 1.1em;
+            opacity: 0.8;
+            font-style: italic;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+        
+        .back-link:hover {
+            opacity: 1;
+        }
+        
+        .content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+        
+        .content h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        
+        .content h3 {
+            color: #495057;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+        
+        .content p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .content ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+        .content li {
+            margin-bottom: 8px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            border-left: 5px solid #2c3e50;
+        }
+        
+        .feature-card h4 {
+            color: #2c3e50;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .feature-card p {
+            color: #666;
+            margin-bottom: 0;
+        }
+        
+        .app-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .app-link {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: transform 0.2s ease;
+        }
+        
+        .app-link:hover {
+            transform: scale(1.05);
+        }
+        
+        .app-link.secondary {
+            background: #f8f9fa;
+            color: #2c3e50;
+            border: 2px solid #2c3e50;
+        }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            opacity: 0.8;
+            margin-top: 40px;
+        }
+        
+        .moon-phases {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .moon-phase {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+        
+        .moon-phase .emoji {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        
+        .moon-phase h4 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .moon-phase p {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+            
+            .content {
+                padding: 25px;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .app-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← トップページに戻る</a>
+        
+        <div class="header">
+            <h1>🌙 Moonlight</h1>
+            <div class="subtitle">睡眠の質を向上させるアプリ</div>
+            <div class="tagline">月の光と共に、安らかな眠りを</div>
+        </div>
+        
+        <div class="content">
+            <h2>アプリ概要</h2>
+            <p>
+                Moonlightは、月の満ち欠けと睡眠パターンの関係を科学的に分析し、最適な睡眠環境を提案するアプリです。
+                自然なリズムで健康的な生活をサポートし、質の高い睡眠を実現します。
+            </p>
+            
+            <h2>月の満ち欠けと睡眠の関係</h2>
+            <p>
+                古来より、月の満ち欠けは人間の生体リズムに影響を与えることが知られています。
+                Moonlightは、この自然なリズムを科学的に分析し、個人の睡眠パターンに最適化されたアドバイスを提供します。
+            </p>
+            
+            <div class="moon-phases">
+                <div class="moon-phase">
+                    <div class="emoji">🌑</div>
+                    <h4>新月</h4>
+                    <p>深い眠りに最適な時期。リラックス効果が高まります。</p>
+                </div>
+                <div class="moon-phase">
+                    <div class="emoji">🌒</div>
+                    <h4>上弦の月</h4>
+                    <p>活動的な睡眠パターン。早寝早起きが推奨されます。</p>
+                </div>
+                <div class="moon-phase">
+                    <div class="emoji">🌕</div>
+                    <h4>満月</h4>
+                    <p>睡眠の質が変化しやすい時期。特別なケアが必要です。</p>
+                </div>
+                <div class="moon-phase">
+                    <div class="emoji">🌘</div>
+                    <h4>下弦の月</h4>
+                    <p>回復と休息の時期。十分な睡眠時間を確保しましょう。</p>
+                </div>
+            </div>
+            
+            <h2>主要機能</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>🌙 月の満ち欠け分析</h4>
+                    <p>現在の月齢と個人の睡眠パターンを分析し、最適な睡眠タイミングを提案します。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>📊 睡眠記録とトラッキング</h4>
+                    <p>睡眠時間、質、パターンを詳細に記録し、月の満ち欠けとの相関関係を可視化します。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🔬 科学的根拠に基づくアドバイス</h4>
+                    <p>睡眠科学の研究に基づいた、個人に最適化された睡眠改善アドバイスを提供します。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🎵 自然音と瞑想ガイド</h4>
+                    <p>月の満ち欠けに合わせた自然音と瞑想ガイドで、リラックスした睡眠環境を作ります。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>📈 睡眠統計とレポート</h4>
+                    <p>週間・月間の睡眠統計とレポートで、睡眠の質の改善を可視化します。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🔔 カスタマイズ可能な通知</h4>
+                    <p>月の満ち欠けに基づいた最適な睡眠タイミングを通知でお知らせします。</p>
+                </div>
+            </div>
+            
+            <h2>技術仕様</h2>
+            <ul>
+                <li><strong>フロントエンド:</strong> Flutter (iOS/Android対応)</li>
+                <li><strong>月齢計算:</strong> 高精度な天体計算アルゴリズム</li>
+                <li><strong>睡眠分析:</strong> 機械学習による睡眠パターン分析</li>
+                <li><strong>データ保存:</strong> ローカルストレージ（プライバシー重視）</li>
+                <li><strong>通知機能:</strong> スマート通知システム</li>
+            </ul>
+            
+            <h2>プライバシーとセキュリティ</h2>
+            <p>
+                Moonlightは、ユーザーのプライバシー保護を最優先に考えて設計されています。
+                睡眠データはすべてローカルデバイスに保存され、外部に送信されることはありません。
+                詳細については、プライバシーポリシーをご確認ください。
+            </p>
+            
+            <div class="app-links">
+                <a href="privacy-policy.html" class="app-link">プライバシーポリシー</a>
+                <a href="terms-of-service.html" class="app-link">利用規約</a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Moonlight</strong> - 睡眠の質を向上させるアプリ</p>
+            <p>開発者: Hon758 | お問い合わせ: アプリ内サポートページからご連絡ください</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collepin - AI搭載型情報収集アプリ</title>
+    <meta name="description" content="Collepinは、Webコンテンツを効率的に収集・整理・活用するためのAI搭載型情報管理アプリです。気になる情報を、すぐにコレクション。">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header .subtitle {
+            font-size: 1.3em;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+        
+        .header .tagline {
+            font-size: 1.1em;
+            opacity: 0.8;
+            font-style: italic;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+        
+        .back-link:hover {
+            opacity: 1;
+        }
+        
+        .content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+        
+        .content h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        
+        .content h3 {
+            color: #495057;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+        
+        .content p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .content ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+        .content li {
+            margin-bottom: 8px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .feature-card h4 {
+            color: #2c3e50;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .feature-card p {
+            color: #666;
+            margin-bottom: 0;
+        }
+        
+        .app-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .app-link {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: transform 0.2s ease;
+        }
+        
+        .app-link:hover {
+            transform: scale(1.05);
+        }
+        
+        .app-link.secondary {
+            background: #f8f9fa;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            opacity: 0.8;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+            
+            .content {
+                padding: 25px;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .app-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← トップページに戻る</a>
+        
+        <div class="header">
+            <h1>📌 Collepin</h1>
+            <div class="subtitle">AI搭載型情報収集アプリ</div>
+            <div class="tagline">気になる情報を、すぐにコレクション</div>
+        </div>
+        
+        <div class="content">
+            <h2>アプリ概要</h2>
+            <p>
+                Collepinは、Webコンテンツを効率的に収集・整理・活用するためのAI搭載型情報管理アプリです。
+                従来のブックマークアプリを超えて、情報収集から活用までをシームレスに繋げる体験を提供します。
+            </p>
+            
+            <h2>主要機能</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>🤖 AI自動処理</h4>
+                    <p>Gemini APIによる高精度なタイトル生成・要約・キーポイント抽出で、情報を自動的に整理します。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>📌 簡単クリップ</h4>
+                    <p>Safari/Chromeからワンタップでクリップ。アプリ内でのURL入力による手動追加も可能です。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>📁 柔軟な整理</h4>
+                    <p>フォルダ、カテゴリ、タグによる多軸分類。AI処理による自動カテゴリ・タグ提案機能付き。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🔍 高度な検索</h4>
+                    <p>全文検索とタグ検索。時系列・カテゴリ・タグ・完了状態による高度なフィルタリング機能。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>👥 ソーシャル機能</h4>
+                    <p>フレンド機能とフォルダ共有による協力作業。リアルタイム同期で最新状態を共有。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🗺️ マップ表示</h4>
+                    <p>位置情報連携（Google Places API）による店名・住所・営業時間の自動抽出とマップ表示。</p>
+                </div>
+            </div>
+            
+            <h2>技術仕様</h2>
+            <ul>
+                <li><strong>フロントエンド:</strong> Flutter (iOS/Android/Web/macOS対応)</li>
+                <li><strong>バックエンド:</strong> Supabase (認証・データベース・ストレージ)</li>
+                <li><strong>AI処理:</strong> Google Gemini 2.5 Flash-Lite API</li>
+                <li><strong>地図機能:</strong> Google Maps / Google Places API</li>
+                <li><strong>同期機能:</strong> リアルタイム同期とオフライン対応</li>
+            </ul>
+            
+            <h2>プライバシーとセキュリティ</h2>
+            <p>
+                Collepinは、ユーザーのプライバシー保護を最優先に考えて設計されています。
+                収集した情報は適切に管理され、ユーザーの同意なく第三者に提供されることはありません。
+                詳細については、プライバシーポリシーをご確認ください。
+            </p>
+            
+            <div class="app-links">
+                <a href="privacy-policy.html" class="app-link">プライバシーポリシー</a>
+                <a href="terms-of-service.html" class="app-link">利用規約</a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Collepin</strong> - AI搭載型情報収集アプリ</p>
+            <p>開発者: Hon758 | お問い合わせ: アプリ内サポートページからご連絡ください</p>
+        </div>
+    </div>
+</body>
+</html>
